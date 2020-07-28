@@ -2,10 +2,14 @@ package com.sistem_funeraria.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.sistem_funeraria.model.enuns.Uf;
 
 
 
@@ -17,6 +21,7 @@ public class Cidade {
 	@Column(name="id")
 	private Integer codigo;
 	private String nome;
+	@Enumerated(EnumType.STRING)
 	private Uf uf;
 	
 	

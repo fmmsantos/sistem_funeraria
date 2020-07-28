@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+//import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -116,7 +117,7 @@ public class CrudRepositoryBean<T> implements CrudRepository<T> {
 		
 		List<T> lista = new QueryEntity<T>(em).execute(requestPage, this.clazz);
 		Long totalRegistros = totalElementos();
-		Pageable pageable = new PageRequest(requestPage.getPage(), requestPage.getSize());
+		Pageable pageable = new PageRequest(requestPage.getPage(), requestPage.getSize(), null);
 
 		return new PageImpl<T>(lista, pageable, totalRegistros);
 	}

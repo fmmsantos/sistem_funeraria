@@ -1,4 +1,4 @@
-package com.sistem_funeraria.model;
+package com.sistem_funeraria.model.enuns;
 
 public enum Uf {
 	AC,	
